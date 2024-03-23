@@ -24,5 +24,5 @@ vec4 effect(vec4 color, Image image, vec2 uvs, vec2 texture_coords) {
         + sample(-1, image, uvs, 1, -1)
         + sample(-1, image, uvs, 1, 1)
     );
-    return vec4(texture.rgb + (alphaSum * u_outline_colour), texture.a);
+    return vec4(texture.rgb + (alphaSum * u_outline_colour), texture.a) * color;
 }
